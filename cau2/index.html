@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau2</title>
+</head>
+<body>
+<h1>Hàm thực hiện đếm số lượng ký
+    tự in hoa  trong chuỗi:</h1>
+<form id="inputForm">
+    <label for="inputString">Nhập chuỗi:</label>
+    <input type="text" id="inputString" name="inputString">
+    <button type="button" onclick="countUppercase()">Đếm ký tự in hoa</button>
+</form>
+<p id="result"></p>
+<script>
+    function countUppercase() {
+        // Lấy giá trị của chuỗi nhập vào
+        var inputString = document.getElementById('inputString').value;
+
+        // Biến đếm số lượng ký tự in hoa
+        var uppercaseCount = 0;
+
+        // Lặp qua từng ký tự trong chuỗi và kiểm tra xem có phải là ký tự in hoa không
+        for (var i = 0; i < inputString.length; i++) {
+            var char = inputString.charAt(i);
+            if (char >= 'A' && char <= 'Z') {
+                uppercaseCount++;
+            }
+        }
+
+        // Hiển thị kết quả hoặc thông báo tương ứng
+        if (uppercaseCount > 0) {
+            document.getElementById('result').innerText = 'Số lượng ký tự in hoa trong chuỗi: ' + uppercaseCount;
+        } else {
+            document.getElementById('result').innerText = 'The Strings is not contain upper char';
+        }
+    }
+</script>
+</body>
+</html>

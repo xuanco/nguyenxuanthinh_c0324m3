@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau4</title>
+</head>
+<body>
+<h1 style="color:blue; font-weight:bold">Phone Management System</h1>
+<form id="phoneForm">
+    <label for="code">Mã điện thoại:</label>
+    <input type="text" id="code" name="code"><br><br>
+    <label for="name">Tên điện thoại:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="brand">Hãng sản xuất:</label>
+    <input type="text" id="brand" name="brand"><br><br>
+    <label for="price">Giá:</label>
+    <input type="number" id="price" name="price"><br><br>
+    <button type="button" onclick="addPhone()">Thêm mới điện thoại</button>
+</form>
+
+<h2>Danh sách điện thoại</h2>
+<ul id="phoneList"></ul>
+<script src="index.js"></script>
+</body>
+</html>

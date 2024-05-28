@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau3</title>
+</head>
+<body>
+<h1>Viết hàm tìm các số nguyên tố với tham số truyền vào là mảng chứa các số nguyên:</h1>
+<form id="inputForm">
+    <label for="numberArray">Nhập mảng các số nguyên:</label>
+    <input type="text" id="numberArray" name="numberArray">
+    <button type="button" onclick="findPrimes()">Tìm số nguyên tố</button>
+</form>
+<p id="result"></p>
+<script>
+    function isPrime(num) {
+    if (num <= 1) return false;
+    if (num === 2) return true;
+    if (num % 2 === 0) return false;
+    for (var i = 3; i <= Math.sqrt(num); i += 2) {
+        if (num % i === 0) return false;
+    }
+    return true;
+}
+
+function findPrimes() {
+    // Lấy giá trị của chuỗi nhập vào và chuyển đổi thành mảng các số nguyên
+    var numberArrayStr = document.getElementById('numberArray').value;
+    var numbers = numberArrayStr.split(',').map(Number);
+
+    // Lọc ra các số nguyên tố từ mảng và sắp xếp tăng dần
+    var primeNumbers = numbers.filter(isPrime).sort((a, b) => a - b);
+
+    // Hiển thị mảng kết quả ra màn hình
+    document.getElementById('result').innerText = 'Các số nguyên tố trong mảng: ' + primeNumbers.join(', ');
+}
+</script>
+</body>
+</html>
